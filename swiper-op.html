@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiper-op</title>
+    <link rel="stylesheet" href="./styles/base.css">
+    <!-- 스와이퍼 플러그인 필수 연결파일 -->
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- 내부스타일&스크립트 -->
+    <style>
+        .op1 {
+            width: 600px; margin: 50px auto;
+            background: aqua;
+        }
+        .op1 .swiper-slide {height: 300px; border: 2px solid red;}
+        .op1 .swiper-button-prev {color: green;}
+        .op1 .swiper-button-next {color: brown;}
+        .op1 .swiper-button-prev, .op1 .swiper-button-next {
+            transform: scale(0.5);
+        }
+        .op1 .swiper-pagination-bullet {background:red; opacity: 1;}
+        .op1 .swiper-pagination-bullet-active {background:green;}
+        .op1 .swiper-scrollbar {background: white;}
+        .op1 .swiper-scrollbar-drag {background: blue;}
+        .op2 {
+            width : 1300px; margin: 100px auto;
+            background: tomato;
+        }
+        .op2 .swiper-slide {height : 900px;}
+        .op2 .swiper-button-prev, .op2 .swiper-button-next {color: green; transform: scale(1.5);}
+        .op2 .swiper-pagination-bullet {background:white; opacity: 1;}
+        .op2 .swiper-pagination-bullet-active {background:green;}
+        .op2 .swiper-scrollbar {background: white;}
+        .op2 .swiper-scrollbar-drag {background: green;}
+    </style>
+</head>
+<body>
+    <div class="swiper op1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <div class="swiper-slide">4</div>
+            <div class="swiper-slide">5</div>
+            <div class="swiper-slide">6</div>
+        </div>
+        <!--swiper-wrapper 밖에  -->
+        <!-- navi -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- swiper pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- swiper scroll -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <hr>
+    <div class="swiper op2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <div class="swiper-slide">4</div>
+            <div class="swiper-slide">5</div>
+            <div class="swiper-slide">6</div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- swiper pagination -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <script>
+        const op1 = new Swiper('.op1',{
+            autoplay:{delay:2000},
+            loop: true,
+            navigation: {
+            nextEl: '.op1 .swiper-button-next',
+            prevEl: '.op1 .swiper-button-prev',
+            },
+            pagination: {
+                el : '.op1 .swiper-pagination'
+            },
+            scrollbar: {
+                el : '.op1 .swiper-scrollbar',
+            },
+        })
+        const op2 = new Swiper('.op2', {
+            autoplay:{delay:2000},
+            loop: true,
+            navigation: {
+            nextEl: '.op2 .swiper-button-next',
+            prevEl: '.op2 .swiper-button-prev',
+            },
+            pagination: {
+                el : '.op2 .swiper-pagination'
+            },
+            scrollbar: {
+                el : '.op2 .swiper-scrollbar',
+            },
+        })
+    </script>
+</body>
+</html>
